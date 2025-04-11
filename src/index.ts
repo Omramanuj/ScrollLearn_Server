@@ -6,7 +6,14 @@ import connectDB from "./config/db";
 
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://scrollnlearn.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 connectDB().then(() => {
   console.log('Database connection established');
 }).catch((error) => {
