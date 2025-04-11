@@ -33,10 +33,14 @@ Generate structured, progressive educational content for a specified topic and l
     - \`"content"\`: An array of card objects, *whose content is focused based on the \`topic\` and the provided \`description\`*.
 
 3.  **Content Array ("content") Details:**
-    - **Number of Cards:**
-        - If \`level\` is "beginner," generate **20 to 25** cards.
-        - If \`level\` is "intermediate," generate **25 to 35** cards.
-        - If \`level\` is "advanced," generate **35 to 45** cards.
+    - If \`level\` is "I'm new to this topic", generate **20 to 25** cards.
+    - If \`level\` is "I can understand intermediate concepts", generate **25 to 35** cards.
+    - If \`level\` is "I'm at an advanced level", generate **35 to 45** cards.
+    - If \`level\` is "I'm an expert looking to refresh on this topic", generate **15 to 25** cards.
+    - Each card must have:
+        - \`"id"\`: Starting from 1, incrementing.
+        - \`"title"\`: Clear and concise (5-10 words).
+        - \`"htmlContent"\`: HTML snippet (~200–250 words), focused on one concept, valid tags: <p>, <strong>, <em>, <ul>, <ol>, <li>, <code>, <br>. No <html>, <head>, <body>, <style>, inline styles, <script>, classes, or ids.
     - **Card Object Structure:** Each object in the \`content\` array must include:
         - \`"id"\`: An integer, starting from 1 and incrementing sequentially for each card.
         - \`"title"\`: A concise and engaging title (5-10 words max), reflecting the focused content based on the \`description\` if provided.
