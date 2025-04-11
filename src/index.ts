@@ -22,6 +22,9 @@ app.get("/ping", (req: Request, res: Response) => {
   res.send("Hello, TypeScript with Node!");
 });
 
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).json({ status: "ping-pong" });
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
